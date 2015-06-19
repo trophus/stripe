@@ -3,4 +3,9 @@
 use Mix.Config
 
 config :stripe,
-  secret_key: "sk_test_BQokikJOvBiI2HlWgH4olfQ2"
+  # Test keys
+  test_secret_key: System.get_env("TEST_SECRET_KEY")
+  test_publishable_key: System.get_env("TEST_PUBLISHABLE_KEY")
+  # Live keys
+  live_secret_key: System.get_env("LIVE_SECRET_KEY")
+  live_publishable_key: System.get_env("LIVE_PUBLISHABLE_KEY")

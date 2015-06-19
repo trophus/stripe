@@ -8,10 +8,10 @@ defmodule Stripe do
 
   @spec process_request_headers(map) :: map
   def process_request_headers(headers) do
-    Dict.put headers, :Authorization, "Bearer #{secret_key}"
+    Dict.put headers, :Authorization, "Bearer #{test_secret_key}"
   end
 
   defp secret_key do
-    System.get_env("STRIPE_SECRET_KEY") || Application.get_env(:stripe, :secret_key)
+    System.get_env("TEST_SECRET_KEY") || Application.get_env(:stripe, :test_secret_key)
   end
 end
